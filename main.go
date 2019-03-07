@@ -35,6 +35,7 @@ func main() {
 		}
 	}
 	canvas.Start(width, height)
+	canvas.Rect(0, 0, width, height, "fill: white")
 	for i, val := range data {
 		percent := val.Usage * (height - 50) / max
 		canvas.Rect(i*60+10, (height-50)-percent, 50, percent, "fill:rgb(77,200,232)")
