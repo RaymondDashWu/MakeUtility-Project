@@ -1,3 +1,6 @@
+// Based on Gophercises tutorial
+// https://gophercises.com/exercises/image
+
 package main
 
 import (
@@ -11,35 +14,31 @@ func rn(n int) int { return rand.Intn(n) }
 
 func main() {
 	data := []struct {
-		Month string
-		Usage int
+		Label string
+		Value int
 	}{
-		{"Jan", 171},
-		{"Feb", 180},
-		{"Mar", 100},
-		{"Apr", 87},
-		{"May", 66},
-		{"Jun", 40},
-		{"Jul", 30},
-		{"Aug", 55},
+		{"Train", 25000},
+		{"Test", 25000},
+		{"Unlabeled", 50000},
 	}
 
 	// []int{25, 25, 100}
 	canvas := svg.New(os.Stdout)
-	width := len(data)*60 + 10
+	width := len(data)*80 + 10
 	max := 0
 	height := 300
 	for _, item := range data {
-		if item.Usage > max {
-			max = item.Usage
+		if item.Value > max {
+			max = item.Value
 		}
 	}
 	canvas.Start(width, height)
 	canvas.Rect(0, 0, width, height, "fill: white")
 	for i, val := range data {
-		percent := val.Usage * (height - 50) / max
+		percent := val.Value * (height - 50) / max
 		canvas.Rect(i*60+10, (height-50)-percent, 50, percent, "fill:rgb(77,200,232)")
-		canvas.Text(i*60+35, height-20, val.Month, "font-size: 14pt; fill: black; text-anchor: middle")
+		canvas.Text(i*60+35, height-20, val.Label, "font-size: 14pt; fill: black; text-anchor: middle")
+		canvas.Text(i*60+35, height+1, string(val.Value), "font-size: 14pt; fill: black; text-anchor: middle")
 
 	}
 
