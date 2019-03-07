@@ -1,0 +1,1 @@
+[![Go Report Card](https://goreportcard.com/badge/github.com/RaymondDashWu/MakeUtility-Project)](https://goreportcard.com/report/github.com/RaymondDashWu/MakeUtility-Project)
