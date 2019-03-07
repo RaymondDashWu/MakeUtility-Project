@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	data := []int{100, 33, 73, 64}
+	data := []int{25, 25, 100}
 
 	w, h := len(data)*60+10, 100
 	r := image.Rect(0, 0, w, h)
