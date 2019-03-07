@@ -36,8 +36,10 @@ func main() {
 	}
 	canvas.Start(width, height)
 	for i, val := range data {
-		percent := val.Usage * height / max
-		canvas.Rect(i*60+10, height-percent, 50, percent, "fill:rgb(77,200,232)")
+		percent := val.Usage * (height - 50) / max
+		canvas.Rect(i*60+10, (height-50)-percent, 50, percent, "fill:rgb(77,200,232)")
+		canvas.Text(i*60+35, height-20, val.Month, "font-size: 14pt; fill: black; text-anchor: middle")
+
 	}
 
 	// rand.Seed(time.Now().Unix())
