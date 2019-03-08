@@ -12,16 +12,7 @@ import (
 
 func rn(n int) int { return rand.Intn(n) }
 
-// TODO: make functions for image
-// TODO: Godocs: write notes on top of functions and then
-// copy/paste github url into godocs
-// TODO: README
-
-// GenerateSVG - generates an SVG graph based on inputs given.
-// func GenerateSVG() {
-
-// }
-
+// main - generates an SVG graph based on inputs given.
 func main() {
 	data := []struct {
 		Label string
