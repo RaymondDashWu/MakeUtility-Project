@@ -1,7 +1,7 @@
 // Based on Gophercises tutorial
 // https://gophercises.com/exercises/image
 
-package graphGenerator
+package graphgenerator
 
 import (
 	"math/rand"
